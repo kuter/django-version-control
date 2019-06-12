@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+recursive-include version_control/templates *
+recursive-include version_control/static *
+recursive-exclude example *
