@@ -1,9 +1,6 @@
-..[![build status](http://gitlab/kuter/version_control/badges/master/build.svg)](http://gitlab/kuter/version_control/commits/master)
-..[![coverage report](http://gitlab/kuter/version_control/badges/master/coverage.svg)](http://gitlab/kuter/version_control/commits/master)
-
-=====
+======================
 Django Version Control
-=============================
+======================
 Third-party app created with https://github.com/kuter/django-plugin-template-cookiecutter
 
 Quick start
