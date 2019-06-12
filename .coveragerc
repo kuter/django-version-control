@@ -1,0 +1,3 @@
+[run]
+include = version_control/*
+omit = */migrations/*, */tests/*
