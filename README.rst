@@ -1,7 +1,7 @@
 .. image:: https://travis-ci.org/kuter/django-version-control.svg?branch=master
     :target: https://travis-ci.org/kuter/django-version-control
 
- .. image:: https://coveralls.io/repos/github/kuter/django-version-control/badge.svg?branch=master
+.. image:: https://coveralls.io/repos/github/kuter/django-version-control/badge.svg?branch=master
     :target: https://coveralls.io/github/kuter/django-version-control?branch=master
 
 ======================
