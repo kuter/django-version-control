@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/kuter/django-version-control.svg?branch=master
+    :target: https://travis-ci.org/kuter/django-version-control
+
 ======================
 Django Version Control
 ======================
