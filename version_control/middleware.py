@@ -11,12 +11,14 @@ except ImportError:
 
 try:
     import git
+
     HAS_GITPYTHON = True
 except ImportError:
     HAS_GITPYTHON = False
 
 try:
     import hglib
+
     HAS_HGLIB = True
 except ImportError:
     HAS_HGLIB = False
@@ -30,18 +32,16 @@ def get_version_control_panel():
         repo = hglib.open(settings.BASE_DIR)
         branch = repo.branch().decode()
     else:
-        return ''
+        return ""
 
-    return render_to_string('version_control_panel.html', {"branch": branch})
+    return render_to_string("version_control_panel.html", {"branch": branch})
 
 
 class VersionControlMiddleware(MiddlewareMixin):
-
     def process_response(self, request, response):
-        encoding = response.charset if hasattr(response, "charset") \
-            else "utf-8"
+        encoding = response.charset if hasattr(response, "charset") else "utf-8"
         content = force_text(response.content, encoding=encoding)
-        insert_before = '</body>'
+        insert_before = "</body>"
         pattern = re.escape(insert_before)
         bits = re.split(pattern, content, flags=re.IGNORECASE)
         if len(bits) > 1:

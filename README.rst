@@ -4,6 +4,10 @@
 .. image:: https://coveralls.io/repos/github/kuter/django-version-control/badge.svg?branch=master
     :target: https://coveralls.io/github/kuter/django-version-control?branch=master
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/python/black
+
+
 ======================
 Django Version Control
 ======================
