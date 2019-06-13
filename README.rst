@@ -32,4 +32,7 @@ For projects running under git source control::
 
 For mercurial projects::
 
-    $ pip install hglib
+    $ pip install hglib  # python 3.x
+    $ pip install python-hglib  # python 2.7.x
+
+
