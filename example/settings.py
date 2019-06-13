@@ -120,5 +120,5 @@ STATIC_URL = "/static/"
 # defined per machine.
 try:
     from local_settings import *  # noqa
-except ImportError as e:
+except ImportError:
     pass

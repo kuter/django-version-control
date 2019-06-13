@@ -21,3 +21,15 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", TemplateView.as_view(template_name="index.html")),
 ]
+
+from django.conf import settings
+from django.urls import include
+if settings.DEBUG:
+    try:
+        import debug_toolbar
+        urlpatterns = [
+            path(r'__debug__/', include(debug_toolbar.urls)),
+        ] + urlpatterns
+    except ImportError:
+        pass
+
