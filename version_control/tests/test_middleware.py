@@ -1,17 +1,24 @@
 from django.test import TestCase
 from django.urls import path, reverse
 from django.http import HttpResponse
-from django.test.utils import override_settings
+from django.test import override_settings, modify_settings
 
 
 urlpatterns = [
-    path("", lambda request: HttpResponse("<body>OK</body>"), name='index')
+    path("", lambda request: HttpResponse("<body>OK</body>"), name="index")
 ]
 
 
+@modify_settings(
+    MIDDLEWARE={
+        "append": "version_control.middleware.VersionControlMiddleware"
+    },
+    INSTALLED_APPS={
+        "append": "version_control"
+    },
+)
 @override_settings(ROOT_URLCONF="version_control.tests.test_middleware")
 class VersionControlMiddlewareTests(TestCase):
-
     def test_should_add_version_control_bar_to_response(self):
         url = reverse("index")
 
