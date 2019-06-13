@@ -32,14 +32,13 @@ def get_version_control_panel():
         repo = hglib.open(settings.BASE_DIR)
         branch = repo.branch().decode()
     else:
-        return ""
+        branch = ""
 
     return render_to_string("version_control_panel.html", {"branch": branch})
 
 
 class VersionControlMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
-        print('process_response')
         encoding = response.charset if hasattr(response, "charset") else "utf-8"
         content = force_text(response.content, encoding=encoding)
         insert_before = "</body>"

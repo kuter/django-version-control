@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.conf import settings
 from django.urls import path, reverse
 from django.http import HttpResponse
 from django.test import override_settings, modify_settings
@@ -25,8 +24,5 @@ class VersionControlMiddlewareTests(TestCase):
 
         response = self.client.get(url)
         response_content = response.content.decode()
-
-        print(settings.MIDDLEWARE)
-        print(settings.INSTALLED_APPS)
 
         self.assertIn('<div id="version_control_panel">', response_content)
