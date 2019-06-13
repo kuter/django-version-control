@@ -39,6 +39,7 @@ def get_version_control_panel():
 
 class VersionControlMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
+        print('process_response')
         encoding = response.charset if hasattr(response, "charset") else "utf-8"
         content = force_text(response.content, encoding=encoding)
         insert_before = "</body>"
