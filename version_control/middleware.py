@@ -1,36 +1,22 @@
 import re
 
-from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.encoding import force_text
+
+from .backends.gitpython import GitPythonBackend
+from .backends.hglib import HgLibBackend
 
 try:
     from django.utils.deprecation import MiddlewareMixin
 except ImportError:
     MiddlewareMixin = object
 
-try:
-    import git
-
-    HAS_GITPYTHON = True
-except ImportError:
-    HAS_GITPYTHON = False
-
-try:
-    import hglib
-
-    HAS_HGLIB = True
-except ImportError:
-    HAS_HGLIB = False
-
 
 def get_version_control_panel():
-    if HAS_GITPYTHON:
-        repo = git.Repo(search_parent_directories=True)
-        branch = repo.active_branch.name
-    elif HAS_HGLIB:
-        repo = hglib.open(settings.BASE_DIR)
-        branch = repo.branch().decode()
+    if GitPythonBackend.get_current_branch_name():
+        branch = GitPythonBackend.get_current_branch_name()
+    elif HgLibBackend.get_current_branch_name():
+        branch = HgLibBackend.get_current_branch_name()
     else:
         branch = ""
 
