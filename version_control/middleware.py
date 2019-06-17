@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_text
 
 from .backends.gitpython import GitPythonBackend
-from .backends.hglib import HgLibBackend
+from .backends.mercurial import HgLibBackend
 
 try:
     from django.utils.deprecation import MiddlewareMixin
