@@ -3,8 +3,7 @@ import re
 from django.template.loader import render_to_string
 from django.utils.encoding import force_text
 
-from .backends.gitpython import GitPythonBackend
-from .backends.mercurial import HgLibBackend
+from .utils import get_backend
 
 try:
     from django.utils.deprecation import MiddlewareMixin
@@ -13,19 +12,16 @@ except ImportError:
 
 
 def get_version_control_panel():
-    if GitPythonBackend.get_current_branch_name():
-        branch = GitPythonBackend.get_current_branch_name()
-    elif HgLibBackend.get_current_branch_name():
-        branch = HgLibBackend.get_current_branch_name()
-    else:
-        branch = ""
+    backend = get_backend()
+    branch = backend.get_current_branch_name()
 
     return render_to_string("version_control_panel.html", {"branch": branch})
 
 
 class VersionControlMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
-        encoding = response.charset if hasattr(response, "charset") else "utf-8"
+        encoding = response.charset if hasattr(response, "charset") \
+            else "utf-8"
         content = force_text(response.content, encoding=encoding)
         insert_before = "</body>"
         pattern = re.escape(insert_before)
