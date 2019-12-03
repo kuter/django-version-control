@@ -17,7 +17,10 @@ urlpatterns = [
         "append": "version_control"
     },
 )
-@override_settings(ROOT_URLCONF="version_control.tests.test_middleware")
+@override_settings(
+    ROOT_URLCONF="version_control.tests.test_middleware",
+    VERSION_CONTROL_BACKEND="version_control.backends.dummy.DummyVersionControlBackend"  # noqa
+)
 class VersionControlMiddlewareTests(TestCase):
     def test_should_add_version_control_bar_to_response(self):
         url = reverse("index")
@@ -25,4 +28,5 @@ class VersionControlMiddlewareTests(TestCase):
         response = self.client.get(url)
         response_content = response.content.decode()
 
-        self.assertIn('<div id="version_control_panel">', response_content)
+        self.assertIn('<div id="version_control_panel">dummy_backend',
+                      response_content)

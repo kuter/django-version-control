@@ -19,7 +19,7 @@ Quick start
 
     INSTALLED_APPS = [
         ...
-        'version_control',
+        "version_control",
     ]
 2. Enable "version_control" in your settings module as follows::
 
