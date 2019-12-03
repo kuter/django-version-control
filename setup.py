@@ -21,9 +21,9 @@ setup(
     description='Django Version Control',
     long_description=README,
     long_description_content_type="text/x-rst",
-    url='https://www.example.com/',
+    url='https://github.com/kuter/django-version-control',
     author='kuter',
-    author_email='kuter@example.com',
+    author_email='contact@devktr.pl',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
