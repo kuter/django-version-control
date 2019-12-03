@@ -20,7 +20,7 @@ setup(
     license='MIT',  # example license
     description='Django Version Control',
     long_description=README,
-    long_description_content_type="text/rst",
+    long_description_content_type="text/x-rst",
     url='https://www.example.com/',
     author='kuter',
     author_email='kuter@example.com',
@@ -30,7 +30,6 @@ setup(
         'Framework :: Django :: 1.6',
         'Framework :: Django :: 2.1',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT license',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
