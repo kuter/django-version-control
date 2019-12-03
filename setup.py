@@ -11,7 +11,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='version-control',
-    version='0.0.3',
+    version='0.0.4',
     packages=find_packages(exclude=["example", "*tests*"]),
     install_requires=[
         'Django >=1.6',
