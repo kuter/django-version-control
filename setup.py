@@ -17,8 +17,10 @@ setup(
         'Django >=1.6,<2.2',
     ],
     include_package_data=True,
-    license='MIT license',  # example license
+    license='MIT',  # example license
     description='Django Version Control',
+    long_description=README,
+    long_description_content_type="text/rst",
     url='https://www.example.com/',
     author='kuter',
     author_email='kuter@example.com',
