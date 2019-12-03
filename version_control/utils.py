@@ -19,4 +19,6 @@ def get_backend():
             klass = GitPythonBackend
         elif HAS_HGLIB:
             klass = HgLibBackend
+        else:
+            raise ImportError("Install GitPython or hglib package.")
     return klass

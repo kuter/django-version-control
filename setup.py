@@ -14,10 +14,10 @@ setup(
     version='0.0.2',
     packages=find_packages(exclude=["*.swp"]),
     install_requires=[
-        'Django >=1.6,<2.2',
+        'Django >=1.6',
     ],
     include_package_data=True,
-    license='MIT',  # example license
+    license='MIT',
     description='Django Version Control',
     long_description=README,
     long_description_content_type="text/x-rst",
@@ -29,6 +29,7 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 1.6',
         'Framework :: Django :: 2.1',
+        'Framework :: Django :: 3.0',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
@@ -37,5 +38,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
 )
