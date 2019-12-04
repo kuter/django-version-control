@@ -1,5 +1,5 @@
-.. image:: https://badge.fury.io/py/bunia.svg
-    :target: https://badge.fury.io/py/bunia
+.. image:: https://badge.fury.io/py/version_control.svg
+    :target: https://badge.fury.io/py/version_control
 
 .. image:: https://travis-ci.org/kuter/django-version-control.svg?branch=master
     :target: https://travis-ci.org/kuter/django-version-control
