@@ -22,21 +22,26 @@ Third-party app created with https://github.com/kuter/django-plugin-template-coo
 
 Quick start
 -----------
-1. Add "version_control" to your INSTALLED_APPS setting like this::
+
+1. Install version_control::
+
+   $ pip install version_control
+
+2. Add "version_control" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
         "version_control",
     ]
 
-2. Enable "version_control" in your settings module as follows::
+3. Enable "version_control" in your settings module as follows::
 
 
     MIDDLEWARE = [
         "version_control.middleware.VersionControlMiddleware"
     ]
 
-3. Install third-party modules
+4. Install third-party modules
 
 For projects running under git source control::
 
@@ -46,5 +51,3 @@ For mercurial projects::
 
     $ pip install hglib  # python 3.x
     $ pip install python-hglib  # python 2.7.x
-
-
