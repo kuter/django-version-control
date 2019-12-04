@@ -1,5 +1,9 @@
-.. image:: https://badge.fury.io/py/version_control.svg
-    :target: https://badge.fury.io/py/version_control
+.. image:: https://img.shields.io/pypi/l/version_control.svg
+   :target: https://raw.githubusercontent.com/kuter/django-version-control/master/LICENSE
+
+.. image:: https://img.shields.io/pypi/v/version_control.svg
+    :target: https://pypi.python.org/pypi/version_control/
+    :alt: Latest PyPI version
 
 .. image:: https://travis-ci.org/kuter/django-version-control.svg?branch=master
     :target: https://travis-ci.org/kuter/django-version-control
@@ -24,16 +28,11 @@ Quick start
         ...
         "version_control",
     ]
+
 2. Enable "version_control" in your settings module as follows::
 
 
     MIDDLEWARE = [
-        "version_control.middleware.VersionControlMiddleware"
-    ]
-
-Old-style middleware::
-
-    MIDDLEWARE_CLASSES = [
         "version_control.middleware.VersionControlMiddleware"
     ]
 
