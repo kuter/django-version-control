@@ -14,7 +14,7 @@ setup(
     version='0.0.4',
     packages=find_packages(exclude=["example", "*tests*"]),
     install_requires=[
-        'Django >=1.6',
+        'Django>=2.2.10',
     ],
     include_package_data=True,
     license='MIT',
