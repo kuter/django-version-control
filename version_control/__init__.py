@@ -53,4 +53,4 @@ Templates
 
 .. program-output:: tree ../../version_control/templates/
 """
-__version__ = "0.0.4"
+__version__ = "0.0.5"
