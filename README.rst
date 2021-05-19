@@ -23,19 +23,24 @@ Third-party app created with https://github.com/kuter/django-plugin-template-coo
 Quick start
 -----------
 
-1. Install version_control::
+1. Install version_control:
+
+.. code:: python
 
    $ pip install version_control
 
-2. Add "version_control" to your INSTALLED_APPS setting like this::
+2. Add "version_control" to your INSTALLED_APPS setting like this:
+
+.. code:: python
 
     INSTALLED_APPS = [
         ...
         "version_control",
     ]
 
-3. Enable "version_control" in your settings module as follows::
+3. Enable "version_control" in your settings module as follows:
 
+.. code:: python
 
     MIDDLEWARE = [
         "version_control.middleware.VersionControlMiddleware"
