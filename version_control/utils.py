@@ -11,7 +11,11 @@ except ImportError:
 
 
 def get_backend():
-    backend_path = getattr(settings, "VERSION_CONTROL_BACKEND", "")
+    backend_path = getattr(
+        settings,
+        "VERSION_CONTROL_BACKEND",
+        "version_control.backends.dummy.DummyVersionControlBackend",
+    )
     try:
         klass = import_string(backend_path)
     except (ImproperlyConfigured, ImportError):
