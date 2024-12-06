@@ -7,6 +7,7 @@ try:
 except:
     from django.utils.encoding import force_str as force_text
 
+
 from .utils import get_backend
 
 try:
@@ -25,7 +26,10 @@ def get_version_control_panel():
 class VersionControlMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         encoding = response.charset if hasattr(response, "charset") else "utf-8"
-        content = force_text(response.content, encoding=encoding)
+        try:
+            content = force_text(response.content, encoding=encoding)
+        except UnicodeDecodeError:
+            return response
         insert_before = "</body>"
         pattern = re.escape(insert_before)
         bits = re.split(pattern, content, flags=re.IGNORECASE)
