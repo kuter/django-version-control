@@ -28,7 +28,7 @@ class VersionControlMiddleware(MiddlewareMixin):
         encoding = response.charset if hasattr(response, "charset") else "utf-8"
         try:
             content = force_text(response.content, encoding=encoding)
-        except UnicodeDecodeError:
+        except (AttributeError, UnicodeDecodeError):
             return response
         insert_before = "</body>"
         pattern = re.escape(insert_before)
