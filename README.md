@@ -58,7 +58,7 @@ pip install python-hglib  # Python 2.7.x
 **For projects with bumpversion:**
 
 ```bash
-pip install bumpversion
+pip install bump-my-version
 ```
 
 ## Supported Backends
