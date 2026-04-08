@@ -80,12 +80,12 @@ VERSION_CONTROL_BACKEND = "version_control.backends.mercurial.MercurialBackend"
 ### Bumpversion
 Reads the version directly from your bumpversion configuration.
 ```python
-VERSION_CONTROL_BACKEND = "version_control.bumpversion.BumpversionVersionControlBackend"
+VERSION_CONTROL_BACKEND = "version_control.backends.bumpversion.BumpversionVersionControlBackend"
 ```
 
 ### Dummy
 A basic backend useful for testing or local development environments that lack a version control system.
 ```python
-VERSION_CONTROL_BACKEND = "version_control.dummy.DummyBackend"
+VERSION_CONTROL_BACKEND = "version_control.backends.dummy.DummyBackend"
 ```
 
